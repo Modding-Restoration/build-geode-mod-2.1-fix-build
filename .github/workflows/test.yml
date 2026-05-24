@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: geode-sdk/textureldr
+          repository: geode-sdk/textureldr@main
           ref: 91a94dbf7450ec2b4ebdb866c5114ee1697927bc
           path: textureldr
 
