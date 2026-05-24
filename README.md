@@ -5,7 +5,7 @@ This repository contains two actions, one for just building the mods, and anothe
 
 # Usage
 ```yml
-- uses: geode-sdk/build-geode-mod@main
+- uses: Modding-Restoration/build-geode-mod-2.1-fix-build@main
   with:
     # Which version of the SDK to use. Use nightly to specify latest commit
     # Default: latest
@@ -37,10 +37,10 @@ This repository contains two actions, one for just building the mods, and anothe
 
 ## Building and uploading a mod on latest sdk
 ```yml
-- uses: geode-sdk/build-geode-mod@main
+- uses: Modding-Restoration/build-geode-mod-2.1-fix-build@main
   id: build
 
-- uses: actions/upload-artifact@v3
+- uses: actions/upload-artifact@v4
   with:
     name: My mod
     path: ${{ steps.build.outputs.build-output }}
@@ -89,10 +89,10 @@ jobs:
     runs-on: ${{ matrix.config.os }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Build the mod
-        uses: geode-sdk/build-geode-mod@main
+        uses: Modding-Restoration/build-geode-mod-2.1-fix-build@main
         with:
           combine: true
       
@@ -102,10 +102,10 @@ jobs:
     needs: ['build']
 
     steps:
-      - uses: geode-sdk/build-geode-mod@combine
+      - uses: Modding-Restoration/build-geode-mod-2.1-fix-build@combine
         id: build
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Build Output
           path: ${{ steps.build.outputs.build-output }}
