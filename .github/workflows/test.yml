@@ -24,14 +24,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: geode-sdk/textureldr@91a94dbf7450ec2b4ebdb866c5114ee1697927bc
+          repository: geode-sdk/textureldr
+          ref: 91a94dbf7450ec2b4ebdb866c5114ee1697927bc
           path: textureldr
 
       - name: Build the mod
         uses: Modding-Restoration/build-geode-mod-2.1-fix-build@main
         with:
-          sdk: 'v1.3.10'
-          cli: 'v2.5.0'
+          sdk: v1.3.10
+          cli: v2.5.0
           build-config: RelWithDebInfo
           path: textureldr
        #  combine: true
